@@ -210,7 +210,6 @@ func PostNewPassword(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "Failed to read body"})
 		return
 	}
-	fmt.Println(body)
 	hashPass, err := bcrypt.GenerateFromPassword([]byte(body.Password), 10)
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "Failed to generate password hash"})
