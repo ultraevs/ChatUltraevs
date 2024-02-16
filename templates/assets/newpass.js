@@ -16,7 +16,7 @@ document.getElementById('new-password-form').addEventListener('submit', async fu
 
     const data = {
         email: email,
-        newPassword: newPassword
+        Password: newPassword
     };
 
     try {

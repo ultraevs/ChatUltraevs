@@ -65,11 +65,9 @@ func Login(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "Failed to read body"})
 		return
 	}
-	fmt.Println(body)
 	var form model.LoginRequest
 	err := database.Db.QueryRow("SELECT email, password FROM chat_users WHERE email = $1", body.Email).Scan(&form.Email, &form.Password)
 	if err == nil {
-		fmt.Println(bcrypt.CompareHashAndPassword([]byte("$2a$10$QQIbvr7VuxKX5YNG1Upu/uQp61zFsvjz3pRLgP4hKWI5ve3s19I1m"), []byte("test")))
 		if err := bcrypt.CompareHashAndPassword([]byte(form.Password), []byte(body.Password)); err != nil {
 			context.JSON(http.StatusUnauthorized, gin.H{"error": "Wrong password"})
 			return
@@ -152,7 +150,6 @@ func ForgotPassword(context *gin.Context) {
 		return
 	}
 	sender := NewGmailSender("Chat Ultraevs", os.Getenv("SMTP_USER"), os.Getenv("SMTP_PASS"))
-	fmt.Println(body.Email)
 	subject := "Восстановление пароля"
 	token := body.Email
 	var link string
@@ -213,7 +210,7 @@ func PostNewPassword(context *gin.Context) {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "Failed to read body"})
 		return
 	}
-
+	fmt.Println(body)
 	hashPass, err := bcrypt.GenerateFromPassword([]byte(body.Password), 10)
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"error": "Failed to generate password hash"})
