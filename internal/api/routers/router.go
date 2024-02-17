@@ -39,7 +39,8 @@ func (router *Router) Setup() {
 	router.engine.GET("v1/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	router.engine.GET("/", controller.AuthPage)
 	router.engine.GET("/forgot", controller.ForgotPage)
-	router.engine.GET("newpass", controller.NewPass)
+	router.engine.GET("newpass", controller.NewPassPage)
+	router.engine.GET("home", controller.MainPage)
 	v1 := router.engine.Group("/v1")
 	router.AuthRoutes(v1)
 }

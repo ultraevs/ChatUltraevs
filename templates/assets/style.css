@@ -1,36 +1,61 @@
 body {
     font-family: Arial, sans-serif;
-    background: #d8d8d8;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    width: 300px;
-    margin: 50px auto;
+    width: 350px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+#login-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
 button {
-    width: 100%;
+    width: 48%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #007bff; /* добавлен цвет фона */
+    color: #fff; /* добавлен цвет текста */
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+form {
+    display: none;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#error-message {
+    color: red;
+    margin-bottom: 15px;
 }

@@ -13,6 +13,10 @@ func ForgotPage(context *gin.Context) {
 	context.HTML(http.StatusOK, "forgot.html", gin.H{"page": "forgot"})
 }
 
-func NewPass(context *gin.Context) {
+func NewPassPage(context *gin.Context) {
 	context.HTML(http.StatusOK, "newpass.html", gin.H{"page": "newpass"})
+}
+
+func MainPage(context *gin.Context) {
+	context.HTML(http.StatusOK, "home.html", gin.H{"page": "home"})
 }

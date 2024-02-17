@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    margin: 0;
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 200px; /* увеличил ширину поля ввода */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+}
+
+button {
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px; /* добавили отступ между полем ввода и блоками */
+    gap: 20px; /* установили отступ между блоками */
+}
+
+.team-block {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px; /* добавил отступ между блоками */
+}
+
+
